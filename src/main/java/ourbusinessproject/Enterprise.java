@@ -1,9 +1,6 @@
 package ourbusinessproject;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 public class Enterprise {
     @NotBlank
@@ -16,7 +13,7 @@ public class Enterprise {
     private String contactName;
 
     @NotBlank
-    @Pattern(regexp="^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")
+    @Email
     private String contactEmail;
 
     public void setName(String name) {
