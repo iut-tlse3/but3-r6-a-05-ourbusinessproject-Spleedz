@@ -25,6 +25,7 @@ public class EnterpriseProjectService {
         newProject.setEnterprise(enterprise);
         this.entityManager.persist(newProject);
         this.entityManager.flush();
+        enterprise.addProject(newProject);
         return newProject;
     }
 

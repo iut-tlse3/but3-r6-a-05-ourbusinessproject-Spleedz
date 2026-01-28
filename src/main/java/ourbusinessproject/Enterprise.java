@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 
 import java.util.Collection;
+import java.util.HashSet;
 
 @Entity
 public class Enterprise {
@@ -66,5 +67,16 @@ public class Enterprise {
 
     public void setId(Long id){
         this.id = id;
+    }
+
+    public void addProject(Project project) {
+        if (this.projects == null) {
+            this.projects = new HashSet<>();
+        }
+        this.projects.add(project);
+    }
+
+    public Collection<Project> getProjects() {
+        return this.projects;
     }
 }
