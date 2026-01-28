@@ -16,6 +16,7 @@ public class Project {
 
     private String description;
 
+    @NotNull
     @ManyToOne
     private Enterprise enterprise;
 
@@ -29,5 +30,13 @@ public class Project {
 
     public Long getId() {
         return this.id;
+    }
+
+    public void setEnterprise(Enterprise enterprise) {
+        this.enterprise = enterprise;
+    }
+
+    public Enterprise getEnterprise() {
+        return enterprise;
     }
 }
