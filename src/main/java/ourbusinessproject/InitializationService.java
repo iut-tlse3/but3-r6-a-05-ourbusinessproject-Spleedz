@@ -16,6 +16,10 @@ public class InitializationService {
     private Project p2e1;
     private Project p1e2;
 
+    /*
+     * On constate que si on as une erreur dans la création d'un des projets ou entreprise, le transactional permet
+     * d'annuler la création de tout les éléments.
+     */
     @Transactional
     public void initProjects(){
         this.e1 = this.enterpriseProjectService.newEnterprise("~Enterprise 1", "First Enterprise", "First Contact", "firstcontact@email.com");
